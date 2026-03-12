@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Certificate Viewer</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f4f4f4;
+}
+
+header{
+background:#2c5364;
+color:white;
+padding:15px;
+text-align:center;
+}
+
+iframe{
+width:100%;
+height:90vh;
+border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h2>Verified Certificate</h2>
+</header>
+
+<iframe id="pdfViewer"></iframe>
+
+<script>
+
+const params=new URLSearchParams(window.location.search);
+
+const pdf=params.get("cert");
+
+if(pdf){
+
+document.getElementById("pdfViewer").src=pdf;
+
+}
+
+</script>
+
+</body>
+
+</html>
